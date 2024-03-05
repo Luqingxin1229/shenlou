@@ -1,0 +1,14 @@
+# dataset
+dataset_name: 'pipeline_audio'
+normal_class: [0]
+known_outlier_class: [1]
+ratio_known_normal: 0.3
+ratio_known_outlier: 0.9
+ratio_pollution: 0
+samples_sr: 22050
+n_mfcc: 20
+
+
+# General setting
+batch_size: 1
+

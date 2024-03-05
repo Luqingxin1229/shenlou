@@ -1,0 +1,2 @@
+异常：训练集aug_abnormal_total   测试集: testnormalpro   困难测试集：testhard
+正常：训练集normal_aug   测试集：test_normal_aug
