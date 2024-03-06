@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow.keras import Model, layers
 
 input_shape=(20, 100, 3)
-
+# 最优
 class multi_CNN_base(Model):
     def __init__(self, req_dim=32):
         super(multi_CNN_base, self).__init__()

@@ -44,7 +44,7 @@ def main():
     # train
     if cfg['train']:
         model.train(train_dataset, cfg['lr'], cfg['epochs'])
-        model.save_model(model_name='saved_models/SAD_model_03_05_1')
+        model.save_model(model_name='saved_models/SAD_model_03_06_3')
     
     # test
     model.test(test_dataset)

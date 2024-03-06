@@ -15,15 +15,15 @@ n_mfcc: 20
 
 # General setting
 batch_size: 64
-eta: 100
+eta: 1
 train: True
 
 # training setting
 epochs: 100
-model_name: 'multi_CNN_0' # multi_CNN_base
+model_name: 'multi_CNN_base' # multi_CNN_base
 lr: 0.001
 
 # AE training setting
-pretrain: True
+pretrain: False
 ae_epochs: 50
 ae_lr: 0.001

@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow.keras import Model, layers
 
 input_shape=(20, 100, 3)
-
+# 3*3 用于3*3测试
 class CNN_0(Model):
     def __init__(self, req_dim=32):
         super(CNN_0, self).__init__()

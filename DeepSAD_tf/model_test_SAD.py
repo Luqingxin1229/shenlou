@@ -43,8 +43,8 @@ def load_pipeline_audio(cfg):
 if __name__ == '__main__':
     up_line = 0
     low_line = 0.3
-    model = tf.saved_model.load('saved_models/SAD_model_03_05_1')
-    c = np.load("saved_models/03_05_1c.npy")
+    model = tf.saved_model.load('saved_models/SAD_model_03_06_1')
+    c = np.load("saved_models/03_06_1c.npy")
     c = tf.constant(c)
     cfg_test = load_yaml('configs/model_tset.yaml')
     test_dataset = load_pipeline_audio(cfg_test)
