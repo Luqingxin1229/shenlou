@@ -5,7 +5,7 @@ from tensorflow.keras import Model, layers
 input_shape=(20, 100, 3)
 
 class multi_CNN_0(Model):
-    def __init__(self, req_dim=4):
+    def __init__(self, req_dim=256):
         super(multi_CNN_0, self).__init__()
         """
         :param rep_dim: 超平面维度  default：32
@@ -79,7 +79,7 @@ class multi_CNN_0(Model):
         return merged
 
 class multi_CNN_Decoder_0(Model):
-    def __init__(self, req_dim=4):
+    def __init__(self, req_dim=256):
         super(multi_CNN_Decoder_0, self).__init__()
 
         self.req_dim = req_dim

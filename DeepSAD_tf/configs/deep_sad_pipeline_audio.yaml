@@ -19,11 +19,11 @@ eta: 1
 train: True
 
 # training setting
-epochs: 100
+epochs: 200
 model_name: 'multi_CNN_base' # multi_CNN_base
 lr: 0.001
 
 # AE training setting
-pretrain: False
+pretrain: True
 ae_epochs: 50
 ae_lr: 0.001

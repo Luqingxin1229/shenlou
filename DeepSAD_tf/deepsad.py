@@ -7,6 +7,7 @@ from networks.multiCNN_base import multi_CNN_Decoder_base, multi_CNN_base
 from networks.multiCNN_0 import multi_CNN_0, multi_CNN_Decoder_0
 from networks.CNN import CNN_0, CNN_Decoder
 import numpy as np
+from datetime import datetime
 
 class DeepSAD():
     def __init__(self, cfg):
@@ -36,7 +37,11 @@ class DeepSAD():
             'test_auc': None,
             'test_time': None
         }
-        
+        current_time = datetime.now().strftime("%Y%m%d-%H%M%S")
+        self.log_dir = 'configs/logs/gradient_tape/' + current_time
+        self.summary_writer = tf.summary.create_file_writer(self.log_dir)
+
+
     def build_model(self):
         
         implemented_networks = ('multi_CNN_0', 'CNN_0', 'multi_CNN_base', 'multi_CNN', 'mnist_LeNet', 'mnist_DGM_M2', 'mnist_DGM_M1M2',
@@ -107,6 +112,10 @@ class DeepSAD():
         for epoch in range(epochs):
             for inputs, _, semi_labels in self.train_dataset:
                 loss = self.train_step(inputs, semi_labels)
+
+            # 将Loss写入TensorBoard
+            with self.summary_writer.as_default():
+                tf.summary.scalar('loss', loss, step=epoch + 1)
             
             print(f"epoch: {epoch+1}/{epochs}, loss: {loss}")
             
